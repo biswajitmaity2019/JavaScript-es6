@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" 
+        content="ie=edge">
+       
+       <style>
+       #table1{
+           background-color: rgb(214, 208, 208);
+           padding:1pc;
+           height: 200px;
+           width: 300px;
+
+       };
+       #tr{
+           padding: 1pc;
+           align-items: center
+
+       };
+       </style>
+        <script type="text/javascript">
+        function fun(){
+            var name=document.getElementById("name");
+            var age=document.getElementById("age");
+            var json;
+            let user1 = {
+               name: name.value,
+               age: age.value,
+            };
+            let user = {
+               name: name.value,
+               age: age.value,
+
+          toString() {
+               return `{name: "${this.name}", age: ${this.age}}`;
+               }
+               
+            };
+           json=JSON.stringify(user1);
+
+            console.log("Object to JSON.stringify\n"+json);
+            console.log("Object to toJson\n"+user);
+        }
+            </script>
+             <title></title>
+    </head>
+    <body>
+        <h1><center>Object to toJson and JSON.stringify</center></h1>
+        <table id="table1" align="center">
+            <tr id="tr">
+                <td>        Name  </td>
+                <td>
+        <input id="name" name="name" type="text" value="" placeholder="Enter your name"></input>
+                </td>
+            </tr>
+        <tr id="tr">
+            <td>
+        Age    
+            </td>
+            <td>
+        <input id="age" name="age" type="number" value="" placeholder="Enter your age"></input>
+            </td>    
+        </tr>
+        <tr id="tr">
+            <td colspan="2">
+        <button onclick="fun()">click here</button>
+            </td>
+        </tr>
+    </table>
+
+
+    </body>
+</html>
